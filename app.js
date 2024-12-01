@@ -116,10 +116,10 @@ app.use("/", userRouter);
 // });
 
 //new added 1-12-24 4.57
-app.get('/error', (req, res) => {
-    const errorMessage = "An error occurred!";
-    res.render('error', { message: errorMessage });
-});
+// app.get('/error', (req, res) => {
+//     const errorMessage = "An error occurred!";
+//     res.render('error', { message: errorMessage });
+// });
 //-----------------------------------
 app.all("*", (req, res, next) => {
     next(new ExpressError(404, "Page not found!"));
@@ -127,7 +127,7 @@ app.all("*", (req, res, next) => {
 
 app.use((err, req, res, next) => {
     let { statusCode = 500, message = "Something went wrong!" } = err;
-    res.status(statusCode).render("error.ejs", { err });
+    res.status(statusCode).render("error.ejs", {message});
     // res.status(statusCode).send(message);
 });
 
