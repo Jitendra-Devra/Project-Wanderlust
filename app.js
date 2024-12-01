@@ -115,6 +115,12 @@ app.use("/", userRouter);
 //     res.send("successful testing");
 // });
 
+//new added 1-12-24 4.57
+app.get('/error', (req, res) => {
+    const errorMessage = "An error occurred!";
+    res.render('error', { message: errorMessage });
+});
+//-----------------------------------
 app.all("*", (req, res, next) => {
     next(new ExpressError(404, "Page not found!"));
 });
