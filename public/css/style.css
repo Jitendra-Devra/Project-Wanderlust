@@ -96,6 +96,7 @@ body{
     border: none !important;
 }
 
+/* image preview on edit form */
 .restricted-size-img{
     width: 250px;       
     height: 200px;      
